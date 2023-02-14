@@ -1,3 +1,2 @@
 gendiff:
 	node/gendiff.js
-	
