@@ -1,7 +1,8 @@
 import { cwd } from 'node:process';
 import fs from 'fs';
 import { resolve } from 'node:path';
-import getTree from './getTree.js'
+import getTree from './getTree.js';
+import _ from 'lodash';
 
 const getFullPath = (filepath) => filepath = resolve(cwd(), filepath);
 const getReadFile = (path) => fs.readFileSync(path, "utf8");
