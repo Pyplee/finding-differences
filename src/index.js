@@ -1,5 +1,5 @@
 import fs, { readFileSync } from 'fs';
-import getTree from './getTree.js';
+import getArrDiff from './getArrDiff.js';
 
 const getReadFile = (file) => readFileSync(file, 'utf8');
 
@@ -13,7 +13,8 @@ const getPrepare = (file) => {
 const genDiff = (filepath1, filepath2) => {
 	const data1 = getPrepare(filepath1);
 	const data2 = getPrepare(filepath2);
-	return getTree(data1, data2);
+	const result = getArrDiff(data1, data2);
+	return result.join('\n');
 }
 
 export default genDiff;
