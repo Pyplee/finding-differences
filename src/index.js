@@ -1,5 +1,7 @@
-import fs, { readFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import getArrDiff from './getArrDiff.js';
+import { resolve } from 'path';
+import { cwd } from 'process';
 
 const getReadFile = (file) => readFileSync(file, 'utf8');
 
@@ -10,10 +12,18 @@ const getPrepare = (file) => {
 	return getParseFile(readedFile);
 };
 
+const getFullPathToFile = (filepath) => resolve(cwd(), filepath);
+
 const genDiff = (filepath1, filepath2) => {
-	const data1 = getPrepare(filepath1);
-	const data2 = getPrepare(filepath2);
+
+	const fullPath1 = getFullPathToFile(filepath1);
+	const fullPath2 = getFullPathToFile(filepath2);
+
+	const data1 = getPrepare(fullPath1);
+	const data2 = getPrepare(fullPath2);
+
 	const result = getArrDiff(data1, data2);
+
 	return result.join('\n');
 }
 
