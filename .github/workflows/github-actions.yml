@@ -5,7 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name:Run lint 🔎
+      - name: Run lint 🔎
       - run: npx eslint .
       - name: Run Test 🔨
       - run: npm test
