@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { expect, test } from '@jest/globals';
 import { readFileSync } from 'fs';
 import path from 'path';
@@ -13,4 +14,4 @@ const result = getRes();
 
 test('Test gendiff', () => {
   expect((genDiff(getFixturePath('file1.json'), getFixturePath('file2.json')))).toEqual(result);
-})
+});
