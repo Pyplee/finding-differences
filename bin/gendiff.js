@@ -11,7 +11,6 @@ program
   .option('-v, --version', 'output the version number')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    // eslint-disable-next-line no-console
     console.log(`{\n${genDiff(filepath1, filepath2)}\n}`);
   });
 
