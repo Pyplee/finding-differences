@@ -23,7 +23,7 @@ const genDiff = (filepath1, filepath2) => {
 
   const result = getArrDiff(data1, data2);
 
-  return result;
+  return `{\n${result.join('\n')}\n}`;
 };
 
 export default genDiff;
