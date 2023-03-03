@@ -3,4 +3,4 @@
 
 ## Example of work gendiff:
 
-[![asciicast](https://asciinema.org/a/7JZJRMkuxe7X5XxQNb8zjHRHJ.svg)](https://asciinema.org/a/7JZJRMkuxe7X5XxQNb8zjHRHJ)
+[![asciicast](https://asciinema.org/a/NRwKKFzdAe87tudQ6MX7mg4V1.svg)](https://asciinema.org/a/NRwKKFzdAe87tudQ6MX7mg4V1)
