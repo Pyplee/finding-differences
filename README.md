@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Pyplee/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Pyplee/frontend-project-46/actions)
 ### Other badges
-![Node CI](https://github.com/Pyplee/frontend-project-46/actions/workflows/github-actions.yml/badge.svg)
+![Node CI](https://github.com/Pyplee/frontend-project-46/actions/workflows/node.js.yml/badge.svg)
 
 ## Example of work gendiff:
 
