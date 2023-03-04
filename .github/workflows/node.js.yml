@@ -24,6 +24,3 @@ jobs:
     - run: npm ci
     - run: npm test
     - run: npx eslint .
-    
-    - name: Upload coverage to Codecov
-    - uses: codecov/codecov-action@v1
