@@ -2,13 +2,13 @@
 import { load } from 'js-yaml';
 
 const getParse = (file, extension) => {
-  if (extension === 'yaml' || extension === 'yml') {
+  if (extension === '.yaml' || extension === '.yml') {
     return load(file);
   }
-  if (extension === 'js') {
+  if (extension === '.json') {
     return JSON.parse(file);
   }
-  return false;
+  return 'Parser error';
 };
 
 export default getParse;
