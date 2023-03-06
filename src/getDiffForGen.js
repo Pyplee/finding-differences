@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const getArrDiff = (data1, data2) => {
+const getDiffForGen = (data1, data2) => {
   const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
   const result = keys.map((key) => {
     if (Object.hasOwn(data1, key) && Object.hasOwn(data2, key)) {
@@ -15,4 +15,4 @@ const getArrDiff = (data1, data2) => {
   return result.flat(1);
 };
 
-export default getArrDiff;
+export default getDiffForGen;
