@@ -20,7 +20,7 @@ const genDiff = (filepath1, filepath2) => {
 
   const result = buildTreeDiff(tree1, tree2);
 
-  return `{\n${result.join('\n')}\n}`;
+  return result;
 };
 
 export default genDiff;
