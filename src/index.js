@@ -3,6 +3,7 @@ import { resolve, extname } from 'path';
 import { cwd } from 'process';
 import buildTreeDiff from './buildTreeDiff.js';
 import getParse from './parsers.js';
+import buildStylish from './formatters/stylish.js';
 
 const getReadFile = (file) => readFileSync(file, 'utf8');
 const getExtension = (filepath) => extname(filepath);
@@ -18,7 +19,8 @@ const genDiff = (filepath1, filepath2) => {
   const tree1 = getParse(readFile1, getExtension(filepath1));
   const tree2 = getParse(readFile2, getExtension(filepath2));
 
-  const result = buildTreeDiff(tree1, tree2);
+  const treeDiff = buildTreeDiff(tree1, tree2);
+  const result = buildStylish(treeDiff);
 
   return result;
 };
