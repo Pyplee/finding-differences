@@ -10,12 +10,12 @@ const findDiff = (data1, data2) => {
   const keys = _.sortBy(_.union(_.keys(data1), _.keys(data2)));
   const result = keys.map((key) => {
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      return getParent(key, 'unchanged', findDiff(data1[key], data2[key]));
+      return getParent(key, 'nested', findDiff(data1[key], data2[key])); // git commit "fix type name"
     }
-    if (!_.has(data1[key])) {
+    if (!_.has(data1, key) && _.has(data2, key)) {
       return getLeaf(key, 'added', data2[key]);
     }
-    if (!_.has(data2[key])) {
+    if (_.has(data1, key) && !_.has(data2, key)) {
       return getLeaf(key, 'removed', data1[key]);
     }
     if (_.isEqual(data1[key], data2[key])) {
@@ -23,11 +23,9 @@ const findDiff = (data1, data2) => {
     }
     return getChangedLeaf(key, 'changed', data1[key], data2[key]);
   });
+  console.log(result);
   return result;
 };
 
-const buildTreeDiff = (data1, data2) => ({
-  type: 'root', children: findDiff(data1, data2),
-});
-
+const buildTreeDiff = (data1, data2) => ({ type: 'root', children: findDiff(data1, data2) });
 export default buildTreeDiff;
