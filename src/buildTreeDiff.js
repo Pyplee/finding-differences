@@ -23,7 +23,6 @@ const findDiff = (data1, data2) => {
     }
     return getChangedLeaf(key, 'changed', data1[key], data2[key]);
   });
-  console.log(result);
   return result;
 };
 
