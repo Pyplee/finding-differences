@@ -18,14 +18,12 @@ const buildPlain = (diff, fileName = []) => {
   const joinPath = nestedKey.join('.');
   switch (type) {
     case 'root': {
-      const result = children
-        .filter((child) => child.type !== 'unchanged')
+      const result = children.filter((child) => child.type !== 'unchanged')
         .flatMap((child) => buildPlain(child, []));
       return result.join('\n');
     }
     case 'nested': {
-      const result = children
-        .filter((child) => child.type !== 'unchanged')
+      const result = children.filter((child) => child.type !== 'unchanged')
         .flatMap((child) => buildPlain(child, nestedKey));
       return result.join('\n');
     }
@@ -36,8 +34,7 @@ const buildPlain = (diff, fileName = []) => {
     case 'changed': {
       return `Property '${joinPath}' was updated. From ${getValueFormat(oldValue)} to ${getValueFormat(newValue)}`;
     }
-    default:
-      return `Type: ${type} is undefined`;
+    default: return `Type: ${type} is undefined`;
   }
 };
 
