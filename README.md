@@ -20,4 +20,4 @@ Enter in terminal 'gendiff -h' or 'gendiff --help'
 ### Example with flat files:
 [![asciicast](https://asciinema.org/a/ORcHFHzmsCaPJR6vezG5MRQr8.svg)](https://asciinema.org/a/ORcHFHzmsCaPJR6vezG5MRQr8)
 ### Example with json format:
-[![asciicast](https://asciinema.org/a/z4Hwg9lSdXw5fgi3bDHyx8S92.svg)](https://asciinema.org/a/z4Hwg9lSdXw5fgi3bDHyx8S92)
+[![asciicast](https://asciinema.org/a/63ElwHGTF8yurvpp4mscuyvbp.svg)](https://asciinema.org/a/63ElwHGTF8yurvpp4mscuyvbp)
