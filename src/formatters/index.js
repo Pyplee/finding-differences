@@ -8,6 +8,9 @@ const identifyStyleAndCall = (treeDiff, style) => {
   if (style === 'plain') {
     return buildPlain(treeDiff);
   }
+  if (style === 'json') {
+    return JSON.stringify(treeDiff);
+  }
   return `Style: ${style} is undefined, check spelling or print help - 'gendiff -h'`;
 };
 
