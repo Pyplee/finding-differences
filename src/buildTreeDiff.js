@@ -6,11 +6,18 @@ const getChangedLeaf = (name, type, oldValue, newValue) => ({
   name, type, oldValue, newValue,
 });
 
+const getKey = (data1, data2) => _.sortBy(_.union(_.keys(data1), _.keys(data2)));
+const isObject = (value1, value2) => {
+  const result1 = typeof (value1) === 'object';
+  const result2 = typeof (value2) === 'object';
+  return result1 && result2;
+};
+
 const findDiff = (data1, data2) => {
-  const keys = _.sortBy(_.union(_.keys(data1), _.keys(data2)));
+  const keys = getKey(data1, data2);
   const result = keys.map((key) => {
-    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      return getParent(key, 'nested', findDiff(data1[key], data2[key])); // git commit "fix type name"
+    if (isObject(data1[key], data2[key])) {
+      return getParent(key, 'nested', findDiff(data1[key], data2[key]));
     }
     if (!_.has(data1, key) && _.has(data2, key)) {
       return getLeaf(key, 'added', data2[key]);
