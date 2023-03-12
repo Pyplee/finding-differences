@@ -3,13 +3,13 @@ import { resolve, extname } from 'path';
 import { cwd } from 'process';
 import buildTreeDiff from './buildTreeDiff.js';
 import getParse from './parsers.js';
-import buildStylish from './formatters/stylish.js';
+import identifyStyleAndCall from './formatters/index.js';
 
 const getReadFile = (file) => readFileSync(file, 'utf8');
 const getExtension = (filepath) => extname(filepath);
 const getFullPathToFile = (filepath) => resolve(cwd(), filepath);
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, format) => {
   const fullPath1 = getFullPathToFile(filepath1);
   const fullPath2 = getFullPathToFile(filepath2);
 
@@ -20,7 +20,7 @@ const genDiff = (filepath1, filepath2) => {
   const tree2 = getParse(readFile2, getExtension(filepath2));
 
   const treeDiff = buildTreeDiff(tree1, tree2);
-  const result = buildStylish(treeDiff);
+  const result = identifyStyleAndCall(treeDiff, format);
 
   return result;
 };
