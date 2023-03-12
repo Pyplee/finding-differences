@@ -17,6 +17,7 @@ const cases = [
   ['plainOutput.txt', 'plain', 'file1.json', 'file2.json'],
   ['plainOutput.txt', 'plain', 'file1.json', 'file2.json'],
   ['plainOutput.txt', 'plain', 'file1.json', 'file2.json'],
+  ['output.json', 'json', 'file1.json', 'file2.json'],
 ];
 
 test.each(cases)('Test all formats and all styles', (output, style, file1, file2) => {
