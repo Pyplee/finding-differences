@@ -39,7 +39,7 @@ const buildStylish = (diff, depth = 0) => {
       return `${resultOld}\n${resultNew}`;
     }
     default:
-      throw new Error(`Type: ${type} is undefined`);
+      return `Type: ${type} is undefined`;
   }
 };
 
