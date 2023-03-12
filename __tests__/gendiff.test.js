@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { expect, test } from '@jest/globals';
 import { readFileSync } from 'fs';
 import path from 'path';
