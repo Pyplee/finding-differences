@@ -38,8 +38,7 @@ const buildStylish = (diff, depth = 0) => {
       const resultNew = `${makeSpace(depth)}+ ${name}: ${getValueFormat(newValue, buildStylish, depth)}`;
       return `${resultOld}\n${resultNew}`;
     }
-    default:
-      return `Type: ${type} is undefined`;
+    default: return `Type: ${type} is undefined`;
   }
 };
 
