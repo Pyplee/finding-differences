@@ -28,7 +28,8 @@ const findDiff = (data1, data2) => {
     if (_.isEqual(data1[key], data2[key])) {
       return getLeaf(key, 'unchanged', data1[key]);
     }
-    return getChangedLeaf(key, 'changed', data1[key], data2[key]);
+    const structure = getChangedLeaf(key, 'changed', data1[key], data2[key]);
+    return structure;
   });
   return result;
 };
