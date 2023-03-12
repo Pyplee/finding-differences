@@ -20,10 +20,10 @@ const cases = [
   ['output.json', 'json', 'file1.json', 'file2.json'],
 ];
 
-test.each(cases)('Test all formats and all styles', (output, style, file1, file2) => {
+test.each(cases)('Check all formats and all styles', (output, style, file1, file2) => {
   expect(genDiff(getFixturePath(file1), getFixturePath(file2), style)).toEqual(getRead(output));
 });
 
-test('Test error', () => {
+test('Views workability error', () => {
   expect((genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'AUF'))).toEqual('Style: AUF is undefined, check spelling or print help - \'gendiff -h\'');
 });
