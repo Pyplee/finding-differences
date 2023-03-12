@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/NRwKKFzdAe87tudQ6MX7mg4V1.svg)](https://asciinema.org/a/NRwKKFzdAe87tudQ6MX7mg4V1)
 ### Yaml/yml files
 [![asciicast](https://asciinema.org/a/eR7VWDnShBWRE8dSlEs9VP2RA.svg)](https://asciinema.org/a/eR7VWDnShBWRE8dSlEs9VP2RA)
+### Example with attached files
+[![asciicast](https://asciinema.org/a/Be07gsea9HFQNBkgJJHZNgQSz.svg)](https://asciinema.org/a/Be07gsea9HFQNBkgJJHZNgQSz)
