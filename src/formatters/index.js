@@ -2,16 +2,16 @@ import buildStylish from './stylish.js';
 import buildPlain from './plain.js';
 
 const identifyStyleAndCall = (treeDiff, style) => {
-  if (style === 'stylish') {
-    return buildStylish(treeDiff);
+  switch (style) {
+    case 'stylish':
+      return buildStylish(treeDiff);
+    case 'plain':
+      return buildPlain(treeDiff);
+    case 'json':
+      return JSON.stringify(treeDiff);
+    default:
+      return `Style: ${style} is undefined, check spelling or print help - 'gendiff -h'`;
   }
-  if (style === 'plain') {
-    return buildPlain(treeDiff);
-  }
-  if (style === 'json') {
-    return JSON.stringify(treeDiff);
-  }
-  return `Style: ${style} is undefined, check spelling or print help - 'gendiff -h'`;
 };
 
 export default identifyStyleAndCall;
