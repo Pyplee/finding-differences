@@ -4,20 +4,27 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9afb8ad0c5c08541a483/maintainability)](https://codeclimate.com/github/Pyplee/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9afb8ad0c5c08541a483/test_coverage)](https://codeclimate.com/github/Pyplee/frontend-project-46/test_coverage)
 ### How install ?
-
+Enter in terminal
 ```bash
-Enter in terminal 'make install'.
+$ make install
 ```
 ### Description:
 
-```bash
 This CLI program can find differences in formats: json/yaml/yml.
 She processes files in different formats: stylish/plain/json.
-```
 ### How use ?
-
+Enter in terminal 
 ```bash
-Enter in terminal 'gendiff -h' or 'gendiff --help'.
+$ gendiff -h
+
+Usage: gendiff [options] <filepath1> <filepath1>
+
+Compares two configuration files and shows a difference.
+
+Options:
+  -v, --version        output the version number
+  -f, --format <type>  output format (default: "stylish")
+  -h, --help           display help for command
 ```
 ## Example of work gendiff:
 ### Json files:
