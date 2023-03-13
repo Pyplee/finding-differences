@@ -13,16 +13,15 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const fullPath1 = getFullPathToFile(filepath1);
   const fullPath2 = getFullPathToFile(filepath2);
 
-  const readFile1 = getReadFile(fullPath1);
-  const readFile2 = getReadFile(fullPath2);
+  const readedFile1 = getReadFile(fullPath1);
+  const readedFile2 = getReadFile(fullPath2);
 
-  const tree1 = getParse(readFile1, getExtension(filepath1));
-  const tree2 = getParse(readFile2, getExtension(filepath2));
+  const obj1 = getParse(readedFile1, getExtension(filepath1));
+  const obj2 = getParse(readedFile2, getExtension(filepath2));
 
-  const treeDiff = buildTreeDiff(tree1, tree2);
-  const result = identifyStyleAndCall(treeDiff, format);
+  const treeDiff = buildTreeDiff(obj1, obj2);
 
-  return result;
+  return identifyStyleAndCall(treeDiff, format);
 };
 
 export default genDiff;

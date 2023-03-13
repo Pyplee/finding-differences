@@ -1,14 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { load } from 'js-yaml';
 
 const getParse = (file, extension) => {
-  if (extension === '.yaml' || extension === '.yml') {
-    return load(file);
+  switch (extension) {
+    case '.yaml':
+      return load(file);
+    case '.yml':
+      return load(file);
+    case '.json':
+      return JSON.parse(file);
+    default:
+      return 'Parser error';
   }
-  if (extension === '.json') {
-    return JSON.parse(file);
-  }
-  return 'Parser error';
 };
 
 export default getParse;
